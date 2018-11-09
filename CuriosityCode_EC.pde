@@ -1,17 +1,28 @@
 // Post your CuriosityCode_EC here. 
-size(500,500);
-background(#00D7FF);      
-fill(#2DFF00);
-arc(250,200,400,350,radians(0),radians(180));
-fill(#FF1A00);
-arc(250,200,350,300,radians(0),radians(180));
-fill(#000000);
-ellipse(200,250,10,20);
-ellipse(125,223,10,20);
-ellipse(242,246,10,20);
-ellipse(291,214,10,20);
-ellipse(312,273,10,20);
-ellipse(261,236,10,20);
-ellipse(225,293,10,20);
-ellipse(325,210,10,20);
-ellipse(340,250,10,20);
+int X=100;
+int Y=100;
+int bounce=2;
+void setup() {
+  size(500, 500);
+}
+
+void draw() {
+  background(#36B3F5);
+  fill(#D32F2F);
+  triangle(X, 150, X+Y, 150, 150, 300);
+  fill(#3DF2AE);
+  arc(X+Y, 150, X, 150, radians(-180), radians(0));
+  fill(#CAE825);
+  ellipse(X+X, Y+Y, 100, 100);
+
+  X=X+bounce;
+  if (X>width-50 || X<124)
+  {
+    bounce=bounce*(-1);
+  }
+  Y=Y+bounce;
+  if (Y>width-0 || Y<100)
+  {
+    bounce=bounce*(-1);
+  }
+}
